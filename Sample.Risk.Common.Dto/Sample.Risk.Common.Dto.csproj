@@ -36,7 +36,7 @@
   <ItemGroup>
     <Compile Include="SettledDto.cs" />
     <Compile Include="CustomerDto.cs" />
-    <Compile Include="BetStatusTypes.cs" />
+    <Compile Include="RiskTypes.cs" />
     <Compile Include="UnsettledDto.cs" />
     <Compile Include="BetDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

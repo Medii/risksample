@@ -8,11 +8,11 @@
     {
         #region Public Methods
 
-        List<SettledDto> GetCustomerSettledBetts(int CustomerId);
+        List<SettledDto> GetCustomerSettledBets(int CustomerId);
 
         List<CustomerDto> GetCustomers();
 
-        List<UnsettledDto> GetUpcomingBetts();
+        List<UnsettledDto> GetUpcomingBets();
 
         #endregion
     }

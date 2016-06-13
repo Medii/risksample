@@ -13,5 +13,13 @@
             get;
             set;
         }
+
+
+        public decimal AverageStake
+        {
+            get;
+            set;
+        }
+
     }
 }

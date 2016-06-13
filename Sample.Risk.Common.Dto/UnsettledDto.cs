@@ -10,6 +10,12 @@
             set;
         }
 
+        public RiskTypes RiskType
+        {
+            get;
+            set;
+        }
+
         #endregion
     }
 }
