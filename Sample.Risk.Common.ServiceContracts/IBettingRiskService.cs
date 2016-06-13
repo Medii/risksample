@@ -8,8 +8,11 @@
     {
         #region Public Methods
 
-        List<SettledDto> GetCustomerSettledBets(int CustomerId);
-
+        /// <summary>
+        ///     Todo:
+        /// </summary>
+        /// <returns></returns>
+        //List<SettledDto> GetSettledBets();
         List<CustomerDto> GetCustomers();
 
         List<UnsettledDto> GetUpcomingBets();

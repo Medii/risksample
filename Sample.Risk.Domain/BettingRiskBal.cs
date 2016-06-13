@@ -6,7 +6,7 @@
     using Sample.Risk.Common.Dto;
     using Sample.Risk.DataAccess;
 
-    public class RiskBal
+    public class BettingRiskBal
     {
         #region Instance Fields
 
@@ -24,7 +24,7 @@
 
         #region Constructors
 
-        public RiskBal(IBetProvider betProvider)
+        public BettingRiskBal(IBetProvider betProvider)
         {
             this.betProvider = betProvider;
         }
@@ -41,8 +41,10 @@
             return customers;
         }
 
-        public List<UnsettledDto> GetUpcomingBets(Dictionary<int, CustomerDto> customerDtos)
+        public List<UnsettledDto> GetUpcomingBets()
         {
+            //Todo: should be refactored; result of getCustomers can be cached
+            Dictionary<int, CustomerDto> customerDtos = this.GetCustomers();
             List<UnsettledDto> unsettledDtos = this.betProvider.GetUnsettledDtos();
             foreach (UnsettledDto unsettledDto in unsettledDtos)
             {

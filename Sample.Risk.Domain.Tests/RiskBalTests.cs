@@ -48,7 +48,7 @@
         {
             Mock<IBetProvider> mockProvider = new Mock<IBetProvider>();
             mockProvider.Setup(p => p.GetSettledDto()).Returns(this.settledDtos);
-            RiskBal riskBal = new RiskBal(mockProvider.Object);
+            BettingRiskBal riskBal = new BettingRiskBal(mockProvider.Object);
             Dictionary<int, CustomerDto> customers = riskBal.GetCustomers();
 
             Assert.AreEqual(3, customers.Count);
@@ -66,10 +66,9 @@
             Mock<IBetProvider> mockProvider = new Mock<IBetProvider>();
             mockProvider.Setup(p => p.GetSettledDto()).Returns(this.settledDtos);
             mockProvider.Setup(p => p.GetUnsettledDtos()).Returns(this.unsettledDtos);
-            RiskBal riskBal = new RiskBal(mockProvider.Object);
-            Dictionary<int, CustomerDto> customers = riskBal.GetCustomers();
+            BettingRiskBal riskBal = new BettingRiskBal(mockProvider.Object);
 
-            List<UnsettledDto> unsettled = riskBal.GetUpcomingBets(customers);
+            List<UnsettledDto> unsettled = riskBal.GetUpcomingBets();
             Assert.AreEqual(6, unsettled.Count);
             Assert.AreEqual(RiskTypes.Risky, unsettled[0].RiskType);
             Assert.AreEqual(RiskTypes.Unusual | RiskTypes.Risky | RiskTypes.StakesGreatherThanThousand, unsettled[1].RiskType);
